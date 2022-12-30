@@ -24,11 +24,14 @@ renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
 
 createBox(0, 0, 0, '#ff0000')
-createBox(0, 1, 0, '#00ff00')
-createBox(0, 2, 0, '#0000ff')
-createBox(0, 2, 1, '#cccccc')
-createBox(0, 2, 2, '#aaffaa')
-createBox(0, 2, 3, '#bbbbff')
+createBox(0, 0, 1, '#0ff000')
+createBox(1, 0, 0, '#00ff00')
+createBox(1, 0, 1, '#000ff0')
+createBox(2, 0, 0, '#0000ff')
+createBox(0, 0, 2, '#f00fff')
+createBox(2, 0, 1, '#f00f0f')
+createBox(1, 0, 2, '#f0f00f')
+createBox(0, 1, 0, '#ff00ff')
 
 function createBox(x, y, z, color) {
   const geometry = new BoxGeometry(1, 1, 1)
@@ -42,7 +45,7 @@ function createBox(x, y, z, color) {
   scene.add(cube)
 }
 
-camera.position.set(-10, 0, 0)
+camera.position.set(10, 10, 10)
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.minZoom = 1;
